@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/adminlayout">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+<head>
+<meta charset="ISO-8859-1">
+<title>User</title>
+<style type="text/css">
+table{
+	border-collapse: collapse;
+}
+	td{
+		/* border:1px solid black; */
+		font-size: 15px;
+		text-align: center;
+	}
+	th{
+		font-size: 20px;
+		color: red;
+	}
+	input{
+		width: 300px;
+		height: 30px;
+		border-radius: 5px;
+	}
+</style>
+</head>
+<body>
+	<div layout:fragment="content" class="container">
+	<h1  th:text="#{infor}" style="font-family: 'Khmer OS Battambang';">Student information</h1>
+	<form action="/add-user" method="post">
+		<table border="0px" >
+			<tr style="padding: 5px;">
+				<td th:text="#{id}" style="font-family: 'Khmer OS Battambang';"​​​​​​>ID:</td>
+				<td><input class="form-control" name="id" placeholder="Input Id..."/> </td>
+			</tr>
+			
+			<tr>
+				<td th:text="#{name1}" style="font-family: 'Khmer OS Battambang';">Name:</td>
+				<td><input class="form-control" name="name"  placeholder="Input Name..."/> </td>
+			</tr>
+			
+			<tr>
+				<td th:text="#{email}" style="font-family: 'Khmer OS Battambang';">Email</td>
+				<td><input class="form-control" name="email" placeholder="Input Email..."/> </td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button th:text="#{submit}" style="font-family: 'Khmer OS Battambang';" type="submit" style="margin-left:45px; margin-top: 5px; margin-bottom: 5px; width: 70px;color: blue;">
+						Submit
+					</button>
+				</td>
+			</tr>
+		</table>
+		
+	</form>
+	
+	<table border="1px solid black" style="width:70%;">
+		<tr>
+			<th th:text="#{id}" style="font-family: 'Khmer OS Battambang';">ID</th>
+			<th th:text="#{name1}" style="font-family: 'Khmer OS Battambang';">name</th>
+			<th th:text="#{email}" style="font-family: 'Khmer OS Battambang';">Email</th>
+			<th​​ th:text="#{remove}" style="font-family: 'Khmer OS Battambang';" style="width:10%;">Remove</th>
+		</tr>
+		<tr th:each="l:${KEY}">
+			<td th:text="${l.getId()}"></td>
+			<td th:text="${l.getName()}"></td>
+			<td th:text="${l.getEmail()}"></td>
+			<td>
+				<a th:href="@{/remove-student(id=${l.getId()})}">
+					<span class="glyphicon glyphicon-trash" arial-label="true">Delete</span>
+				</a>
+			</td>
+		</tr>
+	</table>  
+	</div>
+</body>
+</html>

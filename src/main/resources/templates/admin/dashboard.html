@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  layout:decorator="/admin/adminlayout">
+<head>
+<meta charset="ISO-8859-1">
+<title>Dashboard</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<!-- <div>
+			<center><h1 th:text="#{title}" style="font-family: 'Khmer OS Battambang';">hello miniproject</h1><br>
+			<h1 th:text="#{name}" style="font-family: 'Khmer OS Battambang';color:red;">Gnem Chansethavid PP Class</h1></center>
+	 	</div>
+	 <div style="width:100%; text-align: center;">
+	 	<div style="width:160px;display: inline-block;">
+	 		<img alt="" th:src="@{/img/ronaldo.jfif}">
+	 	</div>
+	 	<div style="width:160px;display: inline-block;">
+	 		<img alt="" th:src="@{/img/ronaldo.jfif}">
+	 	</div>
+	 	<div style="width:160px;display: inline-block;">
+	 		<img alt="" th:src="@{/img/ronaldo.jfif}">
+	 	</div>
+	 	<div style="width:160px;display: inline-block;">
+	 		<img alt="" th:src="@{/img/ronaldo.jfif}">
+	 	</div> -->
+	 	
+	 	
+	 	 <div class="uk-grid uk-grid-width-large-1-4 uk-grid-width-medium-1-2 uk-grid-medium uk-sortable sortable-handler hierarchical_show" data-uk-sortable data-uk-grid-margin>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_visitors peity_data">5,3,9,6,5,9,7</span></div>
+                            <span class="uk-text-muted uk-text-small">Visitors (last 7d)</span>
+                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>12456</noscript></span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_sale peity_data">5,3,9,6,5,9,7,3,5,2</span></div>
+                            <span class="uk-text-muted uk-text-small">Sale</span>
+                            <h2 class="uk-margin-remove">$<span class="countUpMe">0<noscript>142384</noscript></span></h2>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_orders peity_data">64/100</span></div>
+                            <span class="uk-text-muted uk-text-small">Orders Completed</span>
+                            <h2 class="uk-margin-remove"><span class="countUpMe">0<noscript>64</noscript></span>%</h2>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-content">
+                            <div class="uk-float-right uk-margin-top uk-margin-small-right"><span class="peity_live peity_data">5,3,9,6,5,9,7,3,5,2,5,3,9,6,5,9,7,3,5,2</span></div>
+                            <span class="uk-text-muted uk-text-small">Visitors (live)</span>
+                            <h2 class="uk-margin-remove" id="peity_live_text">0<noscript>46</noscript></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Circle  -->
+             <div class="uk-grid uk-grid-width-small-1-2 uk-grid-width-large-1-3 uk-grid-width-xlarge-1-5 uk-text-center uk-sortable sortable-handler" id="dashboard_sortable_cards" data-uk-sortable data-uk-grid-margin>
+                <div>
+                    <div class="md-card md-card-hover md-card-overlay">
+                        <div class="md-card-content">
+                            <div class="epc_chart" data-percent="76" data-bar-color="#03a9f4">
+                                <span class="epc_chart_icon"><i class="material-icons">&#xE0BE;</i></span>
+                            </div>
+                        </div>
+                        <div class="md-card-overlay-content">
+                            <div class="uk-clearfix md-card-overlay-header">
+                                <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                                <h3>
+                                   <span th:text="#{sms}" style="font-family: 'Khmer OS Battambang';"> 
+                                   		User Messages
+                                   </span>
+                                </h3>
+                            </div>
+                            <span >
+                           	 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias consectetur.
+                        	</span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card md-card-hover md-card-overlay">
+                        <div class="md-card-content uk-flex uk-flex-center uk-flex-middle">
+                            <span class="peity_conversions_large peity_data">5,3,9,6,5,9,7</span>
+                        </div>
+                        <div class="md-card-overlay-content">
+                            <div class="uk-clearfix md-card-overlay-header">
+                                <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                                <h3>
+                                   <span th:text="#{conversion}" style="font-family: 'Khmer OS Battambang';">
+                                   		Conversions
+                                   	</span> 
+                                </h3>
+                            </div>
+                            
+                            	Lorem ipsum dolor sit amet, consectetur adipisicing .
+                         
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card md-card-hover md-card-overlay md-card-overlay-active">
+                        <div class="md-card-content" id="canvas_1">
+                            <div class="epc_chart" data-percent="37" data-bar-color="#9c27b0">
+                                <span class="epc_chart_icon"><i class="material-icons">&#xE85D;</i></span>
+                            </div>
+                        </div>
+                        <div class="md-card-overlay-content">
+                            <div class="uk-clearfix md-card-overlay-header">
+                                <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                                <h3>
+                                    Tasks List
+                                </h3>
+                            </div>
+                            <p th:text="#{para}" style="font-family: 'Khmer OS Battambang';">
+                            	Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            </p>
+                            <button class="md-btn md-btn-primary">More</button>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card md-card-hover md-card-overlay">
+                        <div class="md-card-content">
+                            <div class="epc_chart" data-percent="53" data-bar-color="#009688">
+                                <span class="epc_chart_text"><span class="countUpMe">53</span>%</span>
+                            </div>
+                        </div>
+                        <div class="md-card-overlay-content">
+                            <div class="uk-clearfix md-card-overlay-header">
+                                <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                                <h3>
+                                   <span th:text="#{order}" style="font-family: 'Khmer OS Battambang';">
+                                   		Orders
+                                   </span> 
+                                </h3>
+                            </div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card md-card-hover md-card-overlay">
+                        <div class="md-card-content">
+                            <div class="epc_chart" data-percent="37" data-bar-color="#607d8b">
+                                <span class="epc_chart_icon"><i class="material-icons">&#xE7FE;</i></span>
+                            </div>
+                        </div>
+                        <div class="md-card-overlay-content">
+                            <div class="uk-clearfix md-card-overlay-header">
+                                <i class="md-icon material-icons md-card-overlay-toggler">&#xE5D4;</i>
+                                <h3>
+                                   <span th:text="#{regis}" style="font-family: 'Khmer OS Battambang';">
+                                   		 User Registrations
+                                   </span>
+                                </h3>
+                            </div>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- info cards -->
+            <div class="uk-grid uk-grid-medium uk-grid-width-medium-1-2 uk-grid-width-large-1-4" data-uk-grid-margin data-uk-grid-match="{target:'.md-card-content'}">
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-head head_blue">
+                            <div class="md-card-head-menu" data-uk-dropdown>
+                                <i class="md-icon material-icons md-icon-light">&#xE5D4;</i>
+                                <div class="uk-dropdown uk-dropdown-small uk-dropdown-flip">
+                                    <ul class="uk-nav">
+                                        <li><a href="#">User profile</a></li>
+                                        <li><a href="#">User permissions</a></li>
+                                        <li><a href="#" class="uk-text-danger">Delete user</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="uk-text-center">
+                                <img class="md-card-head-avatar" src="assets/img/avatars/avatar_11.png" alt=""/>
+                            </div>
+                            <h3 class="md-card-head-text uk-text-center">
+                                Aleen Deckow
+                                <span>eframi@gmail.com</span>
+                            </h3>
+                        </div>
+                        <div class="md-card-content">
+                            <ul class="md-list md-list-addon">
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon material-icons">&#xE158;</i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">justice.veum@anderson.org</span>
+                                        <span class="uk-text-small uk-text-muted">Email</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon material-icons">&#xE0CD;</i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">625.920.0400</span>
+                                        <span class="uk-text-small uk-text-muted">Phone</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon uk-icon-facebook-official"></i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">facebook.com/envato</span>
+                                        <span class="uk-text-small uk-text-muted">Facebook</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon uk-icon-twitter"></i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">twitter.com/envato</span>
+                                        <span class="uk-text-small uk-text-muted">Twitter</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-head">
+                            <div id="video_player"></div>
+                        </div>
+                        <div class="md-card-content">
+                            <ul class="md-list md-list-addon md-list-interactive" id="video_player_playlist">
+                                <li data-video-src="-CYs99M7hzA">
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon material-icons">&#xE037;</i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">Unboxing the HERO4</span>
+                                        <span class="uk-text-small uk-text-muted">Mashable</span>
+                                    </div>
+                                </li>
+                                <li data-video-src="te689fEo2pY">
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon material-icons">&#xE037;</i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">Apple Watch Unboxing & Setup</span>
+                                        <span class="uk-text-small uk-text-muted">Unbox Therapy</span>
+                                    </div>
+                                </li>
+                                <li data-video-src="7AFJeaYojhU">
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon material-icons">&#xE037;</i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">Energous WattUp Power Transmitter</span>
+                                        <span class="uk-text-small uk-text-muted">TechCrunch</span>
+                                    </div>
+                                </li>
+                                <li data-video-src="hajnEpCq5SE">
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon material-icons">&#xE037;</i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">The new MacBook - Design</span>
+                                        <span class="uk-text-small uk-text-muted">Apple</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-head">
+                            <h3 class="md-card-head-text">Server load <span id="ch_memory_usage_server">Server 1</span></h3>
+                            <div id="c3_server_load" class="head_chart"></div>
+                        </div>
+                        <div class="md-card-content">
+                            <ul class="md-list">
+                                <li class="md-list-item-active">
+                                    <div class="md-list-content">
+                                        <span class="uk-badge uk-badge-success">Online</span>
+                                        <span class="md-list-heading">Server 1 (New York)</span>
+                                        <span class="uk-text-small uk-text-muted">8 192 MB</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-content">
+                                        <span class="uk-badge uk-badge-success">Online</span>
+                                        <span class="md-list-heading">Server 2 (Amsterdam)</span>
+                                        <span class="uk-text-small uk-text-muted">32 768 MB</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-content">
+                                        <span class="uk-badge uk-badge-danger">Offline</span>
+                                        <span class="md-list-heading">Server 3 (Honk Kong)</span>
+                                        <span class="uk-text-small uk-text-muted">16 384 MB</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="md-card">
+                        <div class="md-card-head head_background" style="background-image: url('assets/img/gallery/Image17.jpg')">
+                            <div class="md-card-head-menu">
+                                <i class="md-icon material-icons md-icon-light">&#xE5D5;</i>
+                            </div>
+                            <h3 class="md-card-head-text">
+                                Some City
+                            </h3>
+                            <div class="md-card-head-subtext">
+                                <i class="md-card-head-icon wi wi-day-sunny-overcast uk-margin-right"></i>
+                                <span>14&deg;</span>
+                            </div>
+                        </div>
+                        <div class="md-card-content">
+                            <ul class="md-list md-list-addon">
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon wi wi-day-sunny-overcast"></i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">22&deg; Mostly Sunny</span>
+                                        <span class="uk-text-small uk-text-muted">21 Jul (Tuesday)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon wi wi-cloudy"></i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">19&deg; Partly Cloudy</span>
+                                        <span class="uk-text-small uk-text-muted">22 Jul (Wednesday)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon wi wi-day-rain"></i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">16&deg; Rainy</span>
+                                        <span class="uk-text-small uk-text-muted">23 Jul (Thursday)</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="md-list-addon-element">
+                                        <i class="md-list-addon-icon wi wi-day-sunny uk-text-warning"></i>
+                                    </div>
+                                    <div class="md-list-content">
+                                        <span class="md-list-heading">24&deg; Sunny</span>
+                                        <span class="uk-text-small uk-text-muted">23 Jul (Thursday)</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+	 </div>
+	 </div>
+</body>
+</html>
